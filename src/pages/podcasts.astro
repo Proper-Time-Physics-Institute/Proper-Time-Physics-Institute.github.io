@@ -1,0 +1,34 @@
+---
+import yaml from 'js-yaml';
+import podcastsRaw from '../data/podcasts.yaml?raw';
+import Base from '../layouts/Base.astro';
+
+const eps = yaml.load(podcastsRaw) || [];
+const anyAudio = eps.some((e) => e.audio_url);
+---
+<Base title="Podcasts" description="Conversational tours of the dual-theory history and ideas, generated with NotebookLM.">
+  <section>
+    <div class="wrap">
+      <h2>Podcasts <span class="acc">·</span> NotebookLM</h2>
+      <p class="lead">
+        Multi-voice conversational episodes touring the history and ideas of the dual framework,
+        produced with NotebookLM. {anyAudio ? '' : 'Audio is being produced — show notes and scripts are available now.'}
+      </p>
+      <div class="grid">
+        {eps.map((e) => (
+          <div class="card">
+            <div class="meta">Episode {String(e.episode).padStart(2, '0')}{e.era ? ` · ${e.era}` : ''}</div>
+            <h3>{e.title}</h3>
+            {Array.isArray(e.speakers) && e.speakers.length > 0 && (
+              <p class="small">Voices: {e.speakers.join(', ')}{e.runtime_min ? ` · ~${e.runtime_min} min` : ''}</p>
+            )}
+            {e.audio_url
+              ? <audio controls preload="none" src={e.audio_url}></audio>
+              : <p class="small"><em>Audio coming soon.</em></p>}
+            {e.script_url && <p class="tags"><a class="pill" href={e.script_url}>Script &amp; show notes ↗</a></p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,62 @@
+name: Build & deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+
+      # Content repos (private) — assembled at build time. Needs CONTENT_PAT:
+      # a fine-grained PAT with read (Contents) access to these repos.
+      - name: Checkout quantum
+        uses: actions/checkout@v4
+        with: { repository: Proper-Time-Physics-Institute/quantum, token: '${{ secrets.CONTENT_PAT }}', path: _content/quantum }
+      - name: Checkout electromagnetic
+        uses: actions/checkout@v4
+        with: { repository: Proper-Time-Physics-Institute/electromagnetic, token: '${{ secrets.CONTENT_PAT }}', path: _content/electromagnetic }
+      - name: Checkout relativistic-dynamics
+        uses: actions/checkout@v4
+        with: { repository: Proper-Time-Physics-Institute/relativistic-dynamics, token: '${{ secrets.CONTENT_PAT }}', path: _content/relativistic-dynamics }
+      - name: Checkout commons
+        uses: actions/checkout@v4
+        with: { repository: Proper-Time-Physics-Institute/commons, token: '${{ secrets.CONTENT_PAT }}', path: _content/commons }
+      - name: Checkout animations
+        uses: actions/checkout@v4
+        with: { repository: Proper-Time-Physics-Institute/animations, token: '${{ secrets.CONTENT_PAT }}', path: _content/animations }
+      - name: Checkout podcasts
+        uses: actions/checkout@v4
+        with: { repository: Proper-Time-Physics-Institute/podcasts, token: '${{ secrets.CONTENT_PAT }}', path: _content/podcasts }
+
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: node scripts/sync-content.mjs ./_content
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: ./dist }
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: '${{ steps.deployment.outputs.page_url }}'
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

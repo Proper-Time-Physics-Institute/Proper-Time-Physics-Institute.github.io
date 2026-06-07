@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const all = await getCollection('problems');
+const order = ['jackson', 'griffiths', 'bethe-salpeter', 'gps'];
+const books = order
+  .map((b) => ({
+    key: b,
+    label: all.find((e) => e.data.book === b)?.data.bookLabel || b,
+    items: all.filter((e) => e.data.book === b).sort((a, z) => a.data.order - z.data.order),
+  }))
+  .filter((g) => g.items.length);
+---
+<Base title="Problem library" description="Worked textbook problems in the proper-time formulation: Jackson, Griffiths, Bethe–Salpeter, GPS.">
+  <section>
+    <div class="wrap">
+      <h2>Problem <span class="acc">library</span></h2>
+      <p class="lead">
+        {all.length} worked chapters/results across {books.length} textbooks — each canonical problem
+        solved classically and re-derived in the proper-time formulation, with Wolfram checks.
+      </p>
+      {books.map((g) => (
+        <div>
+          <h3 style="margin-top:2rem">{g.label} <span class="small">({g.items.length})</span></h3>
+          <div class="grid">
+            {g.items.map((e) => (
+              <a class="card" href={`${base}/problems/${e.id}`}>
+                {e.data.chapter && <div class="meta">{e.data.chapter}</div>}
+                <h3>{e.data.title}</h3>
+                <p class="tags"><span class="pill">{e.data.status}</span></p>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,43 @@
+---
+import yaml from 'js-yaml';
+import papersRaw from '../data/papers.yaml?raw';
+import Base from '../layouts/Base.astro';
+
+const papers = yaml.load(papersRaw) || [];
+const groups = [
+  { key: 'electromagnetic', label: 'Electromagnetism' },
+  { key: 'quantum', label: 'Quantum theory' },
+  { key: 'relativistic', label: 'Relativistic & classical dynamics' },
+  { key: 'foundations', label: 'Mathematical foundations' },
+];
+const byGroup = groups.map((g) => ({ ...g, items: papers.filter((p) => p.topic === g.key) })).filter((g) => g.items.length);
+---
+<Base title="Published papers" description="The Gill corpus on proper-time relativity and quantum theory, with links to arXiv and journals.">
+  <section>
+    <div class="wrap">
+      <h2>Published <span class="acc">papers</span></h2>
+      <p class="lead">
+        The {papers.length} papers of the Gill corpus underpinning the dual framework. Links go to the
+        external sources (arXiv preprints and journal DOIs). Seeded from the arXiv author record.
+      </p>
+      {byGroup.map((g) => (
+        <div>
+          <h3 style="margin-top:2rem">{g.label}</h3>
+          <div class="grid">
+            {g.items.map((p) => (
+              <div class="card">
+                <h3>{p.title}</h3>
+                {p.journal && <p class="small">{p.journal}</p>}
+                {p.summary && <p>{p.summary}</p>}
+                <div class="tags">
+                  {p.arxiv && <a class="pill" href={p.arxiv}>arXiv ↗</a>}
+                  {p.doi && <a class="pill" href={p.doi}>DOI ↗</a>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

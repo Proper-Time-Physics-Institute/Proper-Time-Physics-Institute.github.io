@@ -1,0 +1,55 @@
+---
+import yaml from 'js-yaml';
+import papersRaw from '../data/papers.yaml?raw';
+import videosRaw from '../data/videos.yaml?raw';
+import podcastsRaw from '../data/podcasts.yaml?raw';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const papers = yaml.load(papersRaw) || [];
+const videos = yaml.load(videosRaw) || [];
+const podcasts = yaml.load(podcastsRaw) || [];
+const problems = await getCollection('problems');
+const sections = [
+  { href: '/papers', title: 'Published papers', n: papers.length, blurb: 'The Gill corpus on proper-time relativity & quantum theory, linked to arXiv and journals.' },
+  { href: '/videos', title: 'Derivation videos', n: videos.length, blurb: 'Animated walk-throughs of the load-bearing equations, rendered with Manim.' },
+  { href: '/problems', title: 'Textbook problems', n: problems.length, blurb: 'Jackson, Griffiths, Bethe–Salpeter & GPS worked in the proper-time formulation.' },
+  { href: '/roadmap', title: 'Research roadmap', n: null, blurb: 'Where the research campaign is heading — shared openly with the community.' },
+  { href: '/podcasts', title: 'Podcasts', n: podcasts.length, blurb: 'Conversational tours of the history and ideas, generated with NotebookLM.' },
+];
+---
+<Base title={null}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="tag">Dual theory of relativity &amp; quantum mechanics</p>
+      <h1>Proper-Time Physics Institute</h1>
+      <p>
+        A research program reformulating relativity and quantum mechanics with <em>proper time</em> τ
+        as the natural parameter. It reproduces the confirmed predictions of SR + QM + QED — the
+        contrast lies in the mathematical conventions and the interpretive consequences that follow.
+      </p>
+      <p class="eq">b = √(c² + u²) &nbsp;·&nbsp; K = H²/(2mc²) + mc²/2 &nbsp;·&nbsp; b² − u² = c²</p>
+      <div class="btnrow">
+        <a class="btn" href={`${base}/problems`}>Browse the problem library</a>
+        <a class="btn secondary" href={`${base}/papers`}>Read the papers</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Explore the <span class="acc">work</span></h2>
+      <p class="lead">Everything here is assembled from the institute's open research repositories.</p>
+      <div class="grid">
+        {sections.map((s) => (
+          <a class="card" href={`${base}${s.href}`}>
+            {s.n != null && <div class="meta">{s.n} items</div>}
+            <h3>{s.title}</h3>
+            <p>{s.blurb}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,139 @@
+# Gill corpus — seeded from arxiv au:"Tepper L. Gill". REVIEW before publishing.
+- title: Two Mathematically Equivalent Versions of Maxwell's Equations
+  topic: electromagnetic
+  arxiv: http://arxiv.org/abs/1009.3068v1
+  doi: https://doi.org/10.1007/s10701-009-9331-8
+  journal: ''
+  summary: This paper is a review of the canonical proper-time approach to relativistic mechanics and classical electrodynamics. The purpose is to provide a physically complete classical background for a new approach to relativistic quantum theory. Here, we first show that there are two ver…
+- title: Analytic Representation of The Dirac Equation
+  topic: quantum
+  arxiv: http://arxiv.org/abs/quant-ph/0405151v1
+  doi: https://doi.org/10.1088/0305-4470/38/31/006
+  journal: ''
+  summary: In this paper we construct an analytical separation (diagonalization) of the full (minimal coupling) Dirac equation into particle and antiparticle components. The diagonalization is analytic in that it is achieved without transforming the wave functions, as is done by the Foldy-W…
+- title: Analytic Representation of The Square-Root Operator
+  topic: quantum
+  arxiv: http://arxiv.org/abs/quant-ph/0405150v1
+  doi: https://doi.org/10.1088/0305-4470/38/11/010
+  journal: ''
+  summary: In this paper, we use the theory of fractional powers of linear operators to construct a general (analytic) representation theory for the square-root energy operator of relativistic quantum theory, which is valid for all values of the spin. We focus on the spin 1/2 case, consider…
+- title: Constructive Representation Theory for the Feynman Operator Calculus
+  topic: quantum
+  arxiv: http://arxiv.org/abs/math-ph/0701039v3
+  doi: ''
+  journal: ''
+  summary: In this paper, we survey recent progress on the constructive theory of the Feynman operator calculus. (The theory is constructive in that, operators acting at different times, actually commute.) We first develop an operator version of the Henstock-Kurzweil integral, and a new Hil…
+- title: Dual Relativistic Quantum Mechanics I
+  topic: quantum
+  arxiv: http://arxiv.org/abs/2108.05199v1
+  doi: https://doi.org/10.1007/s10701-022-00607-4
+  journal: ''
+  summary: In \cite{2} it was shown that Einstein's special theory of relativity and Maxwell's field theory have mathematically equivalent dual versions. The dual versions arise from an identity relating observer time to proper time as a contact transformation on configuration space, which …
+- title: 'Foundations for Relativistic Quantum Theory I: Feynman''s Operator Calculus and the Dyson Conjectures'
+  topic: quantum
+  arxiv: http://arxiv.org/abs/math-ph/0405059v1
+  doi: https://doi.org/10.1063/1.1425080
+  journal: T. L. Gill and W. W. Zachary, J. Math. Phys., 43 (2002) 69
+  summary: In this paper, we provide a representation theory for the Feynman operator calculus. This allows us to solve the general initial-value problem and construct the Dyson series. We show that the series is asymptotic, thus proving Dyson's second conjecture for QED. In addition, we sh…
+- title: Foundations for proper-time relativistic quantum theory
+  topic: quantum
+  arxiv: http://arxiv.org/abs/1503.02579v1
+  doi: https://doi.org/10.1088/1742-6596/615/1/012013
+  journal: 'Universal Journal of Physics and Application 3(1): 24-40, 2015'
+  summary: This paper is a progress report on the foundations for the canonical proper-time approach to relativistic quantum theory. We first review the the standard square-root equation of relativistic quantum theory, followed by a review of the Dirac equation, providing new insights into …
+- title: Note on the Spectral Theorem
+  topic: quantum
+  arxiv: http://arxiv.org/abs/1211.0058v1
+  doi: ''
+  journal: ''
+  summary: In this note, we show that the spectral theorem, has two representations; the Stone-von Neumann representation and one based on the polar decomposition of linear operators, which we call the deformed representation. The deformed representation has the advantage that it provides a…
+- title: On the physical and mathematical foundations of quantum physics via functional integrals
+  topic: quantum
+  arxiv: http://arxiv.org/abs/2408.16404v3
+  doi: https://doi.org/10.1142/S0217751X2530011X
+  journal: International Journal of Modern Physics A, Volume 40, Article 2530011, Year 2025
+  summary: In order to preserve the leading role of the action principle in formulating all field theories one needs quantum field theory, with the associated BRST symmetry, and Feynman-DeWitt-Faddeev-Popov ghost fields. Such fields result from the fibre-bundle structure of the space of his…
+- title: The Classical Electron Problem
+  topic: relativistic
+  arxiv: http://arxiv.org/abs/physics/0405131v1
+  doi: ''
+  journal: T. L. Gill, W. W. Zachary and J. Lindesay Found. Phys., 31 (2001) 1299
+  summary: In this paper, we construct a parallel image of the conventional Maxwell theory by replacing the observer-time by the proper-time of the source. This formulation is mathematically, but not physically, equivalent to the conventional form. The change induces a new symmetry group wh…
+- title: The Einstein Dual Theory of Relativity
+  topic: relativistic
+  arxiv: http://arxiv.org/abs/2002.02377v1
+  doi: ''
+  journal: Advanced Study in Theoretical Physics, Vol. 13, 2019, no. 8 (2019) 337-377
+  summary: '{This paper is a comparison of the Minkowski, Einstein and Einstein dual theories of relativity. The dual is based on an identity relating the observer time and the proper time as a contact transformation on configuration space, which leaves phase space invariant. The theory is d…'
+- title: A sufficiency class for global (in time) solutions to the 3D Navier-Stokes equations II
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1009.3064v1
+  doi: ''
+  journal: ''
+  summary: 'In this paper, we simplify and extend the results of \cite{GZ} to include the case in which $\Om =\R^3$. Let ${[L^2({\mathbb{R}}^3)]^3}$ be the Hilbert space of square integrable functions on ${\mathbb {R}}^3 $ and let ${\mathbb H}[{\mathbb{R}}^3]^3 =: {\mathbb H}$ be the complet…'
+- title: Adjoint Operators on Banach Spaces
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1010.4922v1
+  doi: ''
+  journal: ''
+  summary: In this paper, we report on new results related to the existence of an adjoint for operators on separable Banach spaces and discuss a few interesting applications. (Some results are new even for Hilbert spaces.) Our first two applications provide an extension of the Poincaré ineq…
+- title: Adjoint for Operators in Banach Spaces
+  topic: foundations
+  arxiv: http://arxiv.org/abs/math-ph/0405060v1
+  doi: ''
+  journal: Proc. Amer. Math. Soc. 132 (2004), 1429
+  summary: In this paper we show that a result of Gross and Kuelbs, used to study Gaussian measures on Banach spaces, makes it possible to construct an adjoint for operators on separable Banach spaces. This result is used to extend well known theorems of von Neumann and Lax. We also partial…
+- title: Banach spaces for the Schwartz distributions
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1704.02949v1
+  doi: ''
+  journal: ''
+  summary: This paper is a survey of a new family of Banach spaces ${KS}^2$ and $SD^2$ that provide the same structure for the Henstock-Kurzweil (HK) integrable functions as the $L^p$ spaces provide for the Lebesgue integrable functions. These spaces also contain the wide sense Denjoy integ…
+- title: Constructive Analysis in Infinitely many variables
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1206.1764v2
+  doi: ''
+  journal: Communications in Mathematical Analysis. Volume 13, Number 1, (2012) 107-141
+  summary: In this paper we investigate the foundations for analysis in infinitely-many (independent) variables. We give a topological approach to the construction of the regular $\s$-finite Kirtadze-Pantsulaia measure on $\R^\iy$ (the usual completion of the Yamasaki-Kharazishvili measure)…
+- title: Global (in Time) Solutions to the 3D-Navier-Stokes Equations on R^3
+  topic: foundations
+  arxiv: http://arxiv.org/abs/math-ph/0701064v1
+  doi: ''
+  journal: ''
+  summary: A well-known unsolved problem (in the classical theory of fluid mechanics) is to identify a set of initial velocities, which may depend on the viscosity, the body forces and possibly the boundary of the fluid that will allow global in time solutions to the three-dimensional Navie…
+- title: Global solutions to the homogeneous and inhomogeneous Navier-Stokes equations
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1405.3502v1
+  doi: ''
+  journal: ''
+  summary: In this paper we take a new approach to a proof of existence and uniqueness of solutions for the 3D-Navier-Stokes equations, which leads to essentially the same proof for both bounded and unbounded domains and for homogeneous or inhomogeneous incompressible fluids. Our approach i…
+- title: Some Banach spaces are almost Hilbert
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1507.08611v1
+  doi: ''
+  journal: ''
+  summary: The purpose of this note is to show that, if $\mcB$ is a uniformly convex Banach, then the dual space $\mcB'$ has a "Hilbert space representation" (defined in the paper), that makes $\mcB$ much closer to a Hilbert space then previously suspected. As an application, we prove that,…
+- title: Sufficiency Class for Global (in Time) Solutions to the 3D-Navier-Stokes Equations
+  topic: foundations
+  arxiv: http://arxiv.org/abs/math-ph/0701038v2
+  doi: ''
+  journal: Nonlinear Analysis 73 (2010) 3116 3122
+  summary: A well-known unsolved problem (in the classical theory of fluid mechanics) is to identify a set of initial velocities, which may depend on the viscosity, the body forces and possibly the boundary of the fluid that will allow global in time solutions to the three-dimensional Navie…
+- title: The Jones Strong Distribution Banach Spaces
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1504.02794v1
+  doi: ''
+  journal: ''
+  summary: In this note, we introduce a new class of separable Banach spaces, ${SD^p}[{\mathbb{R}^n}],\;1 \leqslant p \leqslant \infty$, which contain each $L^p$-space as a dense continuous and compact embedding. They also contain the nonabsolutely integrable functions and the space of test…
+- title: The M-basis Problem for Separable Banach Spaces
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1305.0260v1
+  doi: ''
+  journal: ''
+  summary: In this note we show that, if $\mcB$ is separable Banach space, then there is a biorthogonal system $\{x_n, x_n^*\}$ such that, the closed linear span of $\{x_n\},\bar{\left\langle {\{x_n\}}\right\rangle}=\mcB$ and $\left\| {x_n} \right\|\left\| {x_n^*} \right\| = 1$ for all $n$.
+- title: The S-basis and M-basis Problems for Separable Banach Spaces
+  topic: foundations
+  arxiv: http://arxiv.org/abs/1604.03547v1
+  doi: ''
+  journal: ''
+  summary: This note has two objectives. The first objective is show that, even if a separable Banach space does not have a Schauder basis (S-basis), there always exists Hilbert spaces $\mcH_1$ and $\mcH_2$, such that $\mcH_1$ is a continuous dense embedding in $\mcB$ and $\mcB$ is a contin…

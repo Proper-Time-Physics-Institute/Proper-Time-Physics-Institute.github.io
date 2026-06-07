@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const docs = (await getCollection('roadmap')).sort((a, z) => a.data.order - z.data.order);
+const campaigns = [
+  { label: 'Electromagnetism — Jackson campaign', href: 'https://github.com/Proper-Time-Physics-Institute/electromagnetic' },
+  { label: 'Quantum — Griffiths + Bethe–Salpeter', href: 'https://github.com/Proper-Time-Physics-Institute/quantum' },
+  { label: 'Relativistic dynamics — GPS + Mercury', href: 'https://github.com/Proper-Time-Physics-Institute/relativistic-dynamics' },
+];
+---
+<Base title="Research roadmap" description="Where the proper-time research campaign is heading.">
+  <section>
+    <div class="wrap">
+      <h2>Research <span class="acc">roadmap</span></h2>
+      <p class="lead">The direction of the research program, shared openly as the campaign continues.</p>
+      <div class="grid">
+        {docs.map((d) => (
+          <a class="card" href={`${base}/roadmap/${d.id}`}>
+            <h3>{d.data.title}</h3>
+            <p>Read the full document →</p>
+          </a>
+        ))}
+      </div>
+      <h3 style="margin-top:2.5rem">Active campaigns</h3>
+      <div class="grid">
+        {campaigns.map((c) => (
+          <a class="card" href={c.href}><h3>{c.label}</h3><p>Repository &amp; status ↗</p></a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

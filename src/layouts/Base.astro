@@ -1,0 +1,63 @@
+---
+import 'katex/dist/katex.min.css';
+import '../styles/theme.css';
+
+const { title, description = 'Research on the dual theory of relativity and quantum mechanics (proper-time formulation).' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const nav = [
+  { href: '/papers', label: 'Papers' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/problems', label: 'Problems' },
+  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/podcasts', label: 'Podcasts' },
+];
+const isCur = (h) => path === h || path.startsWith(h + '/');
+const full = title ? `${title} · Proper-Time Physics Institute` : 'Proper-Time Physics Institute';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{full}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={`${base}/favicon.png`} />
+    <meta property="og:title" content={full} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${base}/social_preview_1280x640.png`} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={`${base}/`}>
+          <img src={`${base}/logo.svg`} alt="" />
+          <span>Proper-Time Physics Institute</span>
+        </a>
+        <nav class="nav">
+          {nav.map((n) => (
+            <a href={`${base}${n.href}`} aria-current={isCur(n.href) ? 'page' : undefined}>{n.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          <strong>Proper-Time Physics Institute</strong> — exploring the dual theory of relativity and
+          quantum mechanics (Gill et&nbsp;al.). The framework reproduces confirmed SR&nbsp;+&nbsp;QM&nbsp;+&nbsp;QED
+          predictions; the contrast lies in mathematical conventions and their interpretive consequences.
+        </p>
+        <p class="small">
+          Source repositories on <a href="https://github.com/Proper-Time-Physics-Institute">GitHub</a>.
+          Content is research-in-progress and may be revised.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
