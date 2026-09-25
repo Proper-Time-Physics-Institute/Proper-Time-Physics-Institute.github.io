@@ -23,3 +23,6 @@ public/logo_32.png
 public/favicon.png
 public/social_preview_1280x640.png
 public/.nojekyll
+# local tool output (housekeeping 2026-09-25)
+graphify-out/
+.claude/
